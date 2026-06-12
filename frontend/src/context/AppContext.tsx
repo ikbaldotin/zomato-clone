@@ -8,6 +8,7 @@ import {
 } from "react";
 import { authService } from "../main";
 import { type User, type AppContextType, type LocationData } from "../types";
+import { Toaster } from "react-hot-toast";
 const AppContext = createContext<AppContextType | undefined>(undefined);
 interface AppProviderProps {
   children: ReactNode;
@@ -87,6 +88,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
       }}
     >
       {children}
+      <Toaster />
     </AppContext.Provider>
   );
 };

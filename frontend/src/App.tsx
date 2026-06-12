@@ -1,14 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import { Toaster } from "react-hot-toast";
+
 import ProtectRoutes from "./components/protectedRoutes";
 import PublicRoutes from "./components/publicRoutes";
 import SelectRole from "./pages/SelectRole";
 import Navbar from "./context/navbar";
 import Account from "./pages/Account";
+import { useAppData } from "./context/AppContext";
+import Resturant from "./pages/Resturant";
 function App() {
-  console.log("ENV:", import.meta.env);
+  const { user } = useAppData();
+  if (user && user.role === "seller") {
+    return <Resturant />;
+  }
   return (
     <>
       <BrowserRouter>
@@ -23,7 +28,6 @@ function App() {
             <Route path="/account" element={<Account />} />
           </Route>
         </Routes>
-        <Toaster />
       </BrowserRouter>
     </>
   );
