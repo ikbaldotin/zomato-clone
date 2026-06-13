@@ -11,6 +11,7 @@ import { useAppData } from "./context/AppContext";
 import Resturant from "./pages/Resturant";
 import ResturantPage from "./pages/ResturantPage";
 import Cart from "./pages/Cart";
+import Address from "./pages/Address";
 function App() {
   const { user } = useAppData();
   if (user && user.role === "seller") {
@@ -26,6 +27,7 @@ function App() {
           </Route>
           <Route element={<ProtectRoutes />}>
             <Route path="/" element={<Home />} />
+            <Route path="/address" element={<Address />} />
             <Route path="/resturant/:id" element={<ResturantPage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/select-role" element={<SelectRole />} />
