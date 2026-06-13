@@ -7,6 +7,7 @@ import { AppProvider } from "./context/AppContext.tsx";
 import "leaflet/dist/leaflet.css";
 export const authService = "http://localhost:5000";
 export const resturantService = "http://localhost:5001";
+export const utilsService = "http://localhost:5002";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
