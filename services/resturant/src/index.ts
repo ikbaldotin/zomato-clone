@@ -5,6 +5,7 @@ import resturantRouter from "./routes/resturant.js";
 import menuItemRouter from "./routes/menuitem.js";
 import cartRouter from "./routes/cart.js";
 import cors from "cors";
+import orderRouter from "./routes/order.js";
 import addressRouter from "./routes/address.js";
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ app.use("/api/resturant", resturantRouter);
 app.use("/api/item", menuItemRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/address", addressRouter);
+app.use("/api/order", orderRouter);
 app.listen(port, () => {
   console.log(`Resturant services is running on port ${port}`);
   connectDB();
