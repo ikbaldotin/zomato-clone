@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import resturantRouter from "./routes/resturant.js";
 import menuItemRouter from "./routes/menuitem.js";
+import cartRouter from "./routes/cart.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/resturant", resturantRouter);
 app.use("/api/item", menuItemRouter);
+app.use("/api/cart", cartRouter);
 app.listen(port, () => {
   console.log(`Resturant services is running on port ${port}`);
   connectDB();
