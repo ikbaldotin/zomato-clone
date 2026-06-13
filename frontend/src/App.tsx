@@ -9,6 +9,8 @@ import Navbar from "./context/navbar";
 import Account from "./pages/Account";
 import { useAppData } from "./context/AppContext";
 import Resturant from "./pages/Resturant";
+import ResturantPage from "./pages/ResturantPage";
+import Cart from "./pages/Cart";
 function App() {
   const { user } = useAppData();
   if (user && user.role === "seller") {
@@ -24,6 +26,8 @@ function App() {
           </Route>
           <Route element={<ProtectRoutes />}>
             <Route path="/" element={<Home />} />
+            <Route path="/resturant/:id" element={<ResturantPage />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/select-role" element={<SelectRole />} />
             <Route path="/account" element={<Account />} />
           </Route>
