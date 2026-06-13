@@ -53,6 +53,7 @@ const MenuItems = ({ items, onitemDeleted, isSeller }: MenuItemsProps) => {
       toast.error("Failed to updated status");
     }
   };
+
   const { fetchCart } = useAppData();
   const addToCart = async (restaurantId: string, itemId: string) => {
     try {
